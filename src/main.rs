@@ -1,3 +1,5 @@
+//handles user interactions and program flow.(fetch data from the api and display it to the user)
+
 use std::io;
 use colored::*;
 
@@ -9,7 +11,7 @@ fn main() {
 
     let api_key = "d8d31293bee740761c9ba933823c09ea"; // Keep it here for now
 
-    loop {
+    loop {// keeps the program running until the user decides to exit and API outside of the loop
         println!("{}", "Please enter the name of the city:".bright_green());
         let mut city = String::new();
         io::stdin().read_line(&mut city).expect("Failed to read input");
@@ -32,6 +34,7 @@ fn main() {
 
         println!("{}", "Do you want to search for another city? (yes/no)".bright_green());
         let mut input = String::new();
+        
         io::stdin().read_line(&mut input).expect("Failed to read input");
         if input.trim().to_lowercase() != "yes" {
             println!("Thank you for using Weather Station!");
