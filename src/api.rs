@@ -37,3 +37,7 @@ pub fn get_weather_info(city: &str, country_code: &str, api_key: &str) -> Result
     let response_json = response.json::<WeatherResponse>()?;
     Ok(response_json)
 }
+
+
+//take note them,
+// pub-> make the function public so it can be accessed from main.rs
